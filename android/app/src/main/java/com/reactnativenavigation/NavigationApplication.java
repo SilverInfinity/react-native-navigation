@@ -53,6 +53,11 @@ public abstract class NavigationApplication extends Application implements React
         }
     }
 
+    @Override
+    public boolean clearHostOnActivityDestroy() {
+        return false;
+    }
+
     public void startReactContextOnceInBackgroundAndExecuteJS() {
         reactGateway.startReactContextOnceInBackgroundAndExecuteJS();
     }
