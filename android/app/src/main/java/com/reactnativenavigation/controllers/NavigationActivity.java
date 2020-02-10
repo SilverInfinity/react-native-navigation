@@ -231,6 +231,11 @@ public class NavigationActivity extends AppCompatActivity implements DefaultHard
         NavigationApplication.instance.getActivityCallbacks().onKeyUp(keyCode, event);
         return getReactGateway().onKeyUp(getCurrentFocus(), keyCode) || super.onKeyUp(keyCode, event);
     }
+    
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        return NavigationApplication.instance.getActivityCallbacks().onKeyDown(keyCode, event) || super.onKeyDown(keyCode, event);
+    }
 
     private ReactGateway getReactGateway() {
         return NavigationApplication.instance.getReactGateway();

@@ -178,6 +178,11 @@ class Modal extends Dialog implements DialogInterface.OnDismissListener, ScreenS
         NavigationApplication.instance.getActivityCallbacks().onKeyUp(keyCode, event);
         return super.onKeyUp(keyCode, event);
     }
+    
+    @Override
+    public boolean onKeyDown(int keyCode, @NonNull KeyEvent event) {
+        return NavigationApplication.instance.getActivityCallbacks().onKeyDown(keyCode, event) || super.onKeyDown(keyCode, event);
+    }
 
     @Override
     public void push(ScreenParams params, Promise onPushComplete) {
